@@ -8,7 +8,7 @@ import { PostInfoCard } from "./components/PostInfoCard";
 interface IssueData {
   title: string;
   user: any;
-  createdAt: string;
+  createdAt: Date;
   comments_url: string;
   html_url: string;
   body: string
