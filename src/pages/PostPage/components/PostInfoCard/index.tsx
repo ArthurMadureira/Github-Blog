@@ -1,6 +1,7 @@
 import { PostInfoCardContainer, PostInfos } from "./styles";
 import { ArrowLeft, ChatDots, ClockAfternoon } from "phosphor-react";
 import { Link } from "react-router-dom";
+import { dateFormatter } from "../../../../utils/formatter";
 
 interface PostInfoCardProps {
   title: string;
@@ -8,7 +9,7 @@ interface PostInfoCardProps {
     login: string;
     html_url: string;
   };
-  createdAt: string;
+  createdAt: Date;
   commentsUrl: string;
   html_url: string;
 }
@@ -34,7 +35,7 @@ export function PostInfoCard({ title, user, createdAt, commentsUrl, html_url }: 
 
         <span>
           <ClockAfternoon size={20} />
-          Há um dia
+          {dateFormatter.format(createdAt)}
         </span>
 
         <Link to={commentsUrl}>

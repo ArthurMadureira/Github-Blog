@@ -30,7 +30,7 @@ export const PostContainer = styled.div`
     max-width: 352px;
     color: ${props => props.theme['base-text']};
     overflow: hidden;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     text-overflow: ellipsis;
   }
 `

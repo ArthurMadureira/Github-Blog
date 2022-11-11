@@ -44,8 +44,8 @@ export function Home() {
       <PostsContainer>
         {issues.map(item => {
           return (
-            <Link to={`post/${item.number}`}>
-              <Post key={item.number} title={item.title} body={item.body} createdAt={item.created_at} />
+            <Link to={`post/${item.number}`} key={item.number}>
+              <Post title={item.title} body={item.body} createdAt={item.created_at} />
             </Link>
           )
         })}

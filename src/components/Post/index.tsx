@@ -9,13 +9,15 @@ interface PostProps {
 }
 
 export function Post({ title, body, createdAt }: PostProps) {
+  const aboveLimit = body.length > 181
+  const dotsOrEmpty = aboveLimit ? '...' : '';
   return (
     <PostContainer>
       <header>
         <h2>{title}</h2>
         <span>{dateFormatter.format(new Date(createdAt))}</span>
       </header>
-      <p>{body}</p>
+      <p>{body.substring(0, 181) + dotsOrEmpty}</p>
     </PostContainer>
   )
 }
